@@ -1,2 +1,0 @@
-# coding
-c++ programming questions
