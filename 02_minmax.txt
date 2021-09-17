@@ -1,0 +1,50 @@
+#include<iostream>
+using namespace std;
+
+//declaring functions
+void findsmall(int arr[],int length);
+void findlarge(int arr[],int length);
+
+int main()
+{
+    //declaring array
+    int arr[]={4,5,3,6,12,45,2,9};
+    
+    //calculating array size
+    int length=sizeof(arr)/sizeof(arr[0]);
+    
+    //function call to find smallest number in array
+    cout<<"smallest number in array is:"<<endl;
+    findsmall(arr,length);
+    
+    //function call to find maximum number in array
+    cout<<"largest number in array is:"<<endl;
+    findlarge(arr,length);
+}
+
+//function to find smallest number
+void findsmall(int arr[],int length)
+{
+    int min=arr[0];
+ for(int i=0;i<length;i++)
+ {
+     if(arr[i]<min)
+     min=arr[i];
+ }
+ cout<<min<<endl;
+}
+
+//function to find largest number
+void findlarge(int arr[],int length)
+{
+    int max=arr[0];
+    for(int i=0;i<length;i++)
+    {
+        if(arr[i]>max)
+         max=arr[i];
+    }
+    cout<<max<<endl;
+}
+
+
+
