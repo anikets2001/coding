@@ -1,0 +1,57 @@
+//program to sort a given array by bubble sort
+#include <iostream>
+using namespace std;
+
+//function to sort array
+void sort(int arr[],int size)
+{
+    for(int i=0;i<size;i++)
+       {
+           for(int j=i+1;j<size;j++)
+           {
+               if(arr[i]>arr[j])
+               {
+               int temp=arr[i];
+               arr[i]=arr[j];
+               arr[j]=temp;
+               }
+           }
+       }
+}
+//main function
+int main()
+{
+    
+    int size;
+    
+    //taking array size from user
+    cout<<"Ente the size of array"<<endl;
+    cin>>size;
+    
+    int arr[size];
+    
+    //taking array input from user
+    cout<<"Enter the Array Elements one by one "<<endl;
+    for(int i=0;i<size;i++)
+    {
+        cin>>arr[i];
+    }
+    
+    cout<<endl;
+    
+    cout<<"Original Array: ";
+    for(int i=0;i<size;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+    
+    cout<<endl;
+    cout<<"Sorted Array: "; 
+    sort(arr,size);
+    
+    for(int i=0;i<size;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+    
+}
