@@ -1,0 +1,47 @@
+//program to cyclicly rotate the array
+#include<iostream>
+using namespace std;
+
+//function to rotate aray
+void rotate(int arr[],int length)
+{
+    int temp=arr[length-1];           //storing last element in temp
+    
+    for(int i=length-1;i>0;i--)       //to shifting elements one by one
+    {
+        arr[i]=arr[i-1];
+    }
+    
+    arr[0]=temp;                     //storing last element to first index
+    
+}
+
+//main function
+int main()
+{
+    //initializing array
+    int arr[]={1,2,3,4,5};
+    //finding array size
+    int length=sizeof(arr)/sizeof(arr[0]);
+    
+    //printing original array
+    cout<<"original array "<<endl;
+    for(int i=0;i<length;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+    
+    //line break
+    cout<<endl;
+    
+    
+    //calling function
+    rotate(arr,length);
+    
+    //printing rotated array
+    cout<<"rotated array "<<endl;
+    for(int i=0;i<length;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+}

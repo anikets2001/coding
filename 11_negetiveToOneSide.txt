@@ -1,0 +1,42 @@
+//program to segregate the array 
+#include<iostream>
+using namespace std;
+
+//funtion to segregate the array
+void segregate(int arr[],int length)
+{
+    int j=0;
+    for(int i=0;i<length;i++)
+    {
+        if(arr[i]<0)
+        {
+            if(i!=j)
+            {
+            swap(arr[i],arr[j]);
+            j++;
+            }
+        }
+    }
+}
+int main()
+{
+    int arr[]={2,4,-10,13,-7,-60,52,8,-19 };               
+    int length=sizeof(arr)/sizeof(arr[0]);
+    
+    //printing origianl array
+    for(int i=0;i<length;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+    
+    //function call
+    segregate(arr,length);
+    
+    //printing segregate array
+    for(int i=0;i<length;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+    
+}

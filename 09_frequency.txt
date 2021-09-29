@@ -1,0 +1,45 @@
+//program to find the frequency of all numbers in an array
+#include<iostream>
+using namespace std;
+
+
+//function to find frequency of elements 
+void frequency(int arr[],int size)
+{
+   for(int i=0;i<size;i++)
+   {
+       int count=1;
+       if(arr[i]!=-1){
+       for(int j=i+1;j<size;j++)
+       {
+          if(arr[j]==arr[i])
+          {
+              count++;
+              arr[j]=-1;
+          }
+       }
+    
+       
+       if(count>1)
+       {
+           cout<<arr[i]<<" | "<<count<<" times"<<endl;
+       } 
+       else
+       {
+           cout<<arr[i]<<" | "<<1<<" time"<<endl; 
+       }
+   }
+  }
+}
+
+int main()
+{
+    int arr[]={3,2,5,2,3,9,1,0,2,9,3,5,10,14,14,14,14};
+    int size=sizeof(arr)/sizeof(arr[0]);
+    
+    cout<<"NUMBER "<<" | "<<" ITMES "<<endl;
+    cout<<endl;
+    frequency(arr,size);
+    
+    
+}
