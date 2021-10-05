@@ -1,0 +1,32 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+
+
+//function to find minimize height
+void minimizeHeight(int arr[],int length)
+{
+    sort(arr,arr+length);
+    int maxi=arr[length-1];
+    int mini=arr[0];
+    int res=maxi-mini;
+    int k=2;
+    
+    for(int i=1;i<length;i++)
+    {
+        maxi=max(arr[i-1]+k,arr[length-1]-k);
+        mini=min(arr[i]-k,arr[0]+k);
+        res=min(res,maxi-mini);
+    }
+    
+    cout<<res;
+    
+}
+int main()
+{
+   int arr[]={1,5,8,10};
+   int length=sizeof(arr)/sizeof(arr[0]);
+   
+   
+   minimizeHeight(arr,length);
+}
