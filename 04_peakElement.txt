@@ -1,41 +1,43 @@
-//program to find peak element in array
+//program to find peak element indices in an array
 #include<iostream>
 using namespace std;
 
-
-void peak(int arr[],int size)
+//function to find peak elements
+void peak(int arr[],int length)
 {
-    if(size==1)
+    //if only one element in array
+    if(length==0)
     {
         cout<<0<<" ";
     }
-    if(arr[0]>arr[1])
+    
+    //if first element is greater than the second
+     if(arr[0]>arr[1])
     {
-        cout<< 0 <<" ";
-    }
-    if(arr[size-1]>arr[size-2])
-    {
-      cout<<size-1<<" ";
+        cout<<0<<" ";
     }
     
-    for(int i=1;i<size-1;i++)
+    //check for all other elements except last element
+    for(int i=1;i<length-2;i++)
     {
         if(arr[i]>arr[i-1] && arr[i]>arr[i+1])
         {
-           cout<<i<<" ";
+            cout<<i<<" ";
         }
     }
     
+    //check for last element
+     if(arr[length-1]>arr[length-2])
+    {
+        cout<<length-1<<" ";
+    }
 }
-
-
-//main function
 int main()
 {
     int arr[]={3,5,2,6,3,7,4,8};
-    int size=sizeof(arr)/sizeof(arr[0]);
+    int length=sizeof(arr)/sizeof(arr[0]);
     
-    cout<<"indices with peak elements are: ";
-    peak(arr,size);
+    
+    cout<<"indices of peak elements are:"<<endl;
+    peak(arr,length);
 }
-
